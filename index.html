@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penalty</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Formulario Jogador -->
+    
+    <section id="introducaoPlayers">
+        <div id="Play1">
+            <input type="text" name="jogador1" id="j1" required="required" onfocus="this.value = '';">
+            <label for="j1">Jogador 1</label>
+        </div>
+
+        <!-- selecao 1 -->
+
+        <section class="select" id="select">
+            <div class="escolha1">
+                <input type="radio" name="escolha1" id="jogadorN1" checked onclick="escolher()">
+                <label for="jogadorN1">Jogador</label>
+            </div>
+            <div class="escolha2">
+                <input type="radio" name="escolha1" id="guardaredesN1" onclick="escolher()">
+                <label for="guardaredesN1">Guardaredes</label>
+            </div>
+        </section>
+
+        <div id="Play2">
+            <input type="text" name="jogador2" id="j2" required="required" onfocus="this.value = '';">
+            <label for="j2">Jogador 2</label>
+        </div>
+        
+        <!-- selecao 2 -->
+
+        <section class="select select_2">
+            <div class="escolha1">
+                <input type="radio" name="escolha" id="jogador" onclick="escolher()">
+                <label for="jogador">Jogador</label>
+            </div>
+            <div class="escolha2">
+                <input type="radio" name="escolha" id="guardaredes" checked onclick="escolher()">
+                <label for="guardaredes">Guardaredes</label>
+            </div>
+        </section>
+        <button onclick="submeter()">Começar</button>
+    </section>
+
+    <!-- Interface -->
+
+    <section id="interface">
+        <div class="score">
+            <h2 id="p1" class="jogador">
+                <div id="nomeP1" onclick="mudarNome1()">
+                    Player 1
+                </div>
+                <div id="golosP1">
+                    00
+                </div>
+            </h2>
+            <h2 id="tentativas">
+                <div class="round">
+                    01
+                </div>
+            </h2>
+            <h2 id="p2" class="jogador">
+                <div id="nomeP2" onclick="mudarNome2()">
+                    Player2
+                </div>
+                <div id="golosP2">
+                    00
+                </div>
+            </h2>
+        </div>
+
+        <!-- Direcao do chute -->
+        <div class="player">
+            <div id="baliza">
+
+            </div>
+            <div id="bola">
+                
+            </div>
+            <div id="container-comandos">
+                <div id="esquerda" onclick="esquerda()" onkeydown="pressionar()">
+                    <i class="bi bi-caret-left-fill"></i>
+                </div>
+                <div id="cima" onclick="cima()" onkeydown="pressionar()">
+                    <i class="bi bi-caret-up-fill"></i>
+                </div>
+                <div id="baixo" onclick="baixo()" onkeydown="pressionar()">
+                    <i class="bi bi-caret-down-fill"></i>
+                </div>
+                <div id="direita" onclick="direita()" onkeydown="pressionar()">
+                    <i class="bi bi-caret-right-fill"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JS -->
+    <script type="text/javascript" src="BoxEfeito.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".jogador"), {
+            max: 25,
+            speed: 2000,
+            glare: true,
+            "max-glare": .3,
+        });
+    </script>
+</body>
+</html>
