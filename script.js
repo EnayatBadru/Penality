@@ -98,12 +98,52 @@ function mudarNome2()
 
 //Jogo
 
+var pos = 0;
 function esquerda()
 {
-        var mov = [];
-        mov.push(1);
-        alert(mov.length)
+    var pos = 1;
+    alert("jogador dois a escolher");
 }
+
+function cima()
+{
+    var pos = 2;
+    alert("jogador dois a escolher");
+}
+
+function baixo()
+{
+    var pos = 3;
+    alert("jogador dois a escolher");
+}
+
+
+function direita()
+{
+    var pos = 4;
+    alert("jogador dois a escolher");
+}
+
+function pressionar(event)
+{
+    var tecla = event.KeyCode;
+
+    alert(tecla);
+
+    if(tecla === 13)
+    {
+
+    }
+
+}
+
+var chuteEvent = document.getElementById("chuteinput");
+
+chuteEvent.addEventListener("input", function(e){
+    chuteEvent.focus();
+    alert("hey working");
+    e.target.value = "";
+})
 
 
 //Lista de movimentos
